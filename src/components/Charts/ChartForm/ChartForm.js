@@ -10,7 +10,7 @@ const ChartForm = ({
   setIsBarChartVisible,
 }) => {
   const [X, setX] = useState('');
-  const [Y, setY] = useState(0);
+  const [Y, setY] = useState('');
 
   const [month, setMonth] = useState(['January','February','March','April','May'])
   const [values, setValues] = useState([1,5,10,1,2])
@@ -60,13 +60,13 @@ const ChartForm = ({
 
   const add = (e) => {
     e.preventDefault()
-    if (X !== '') {
+    if (X !== '' | Y !== '') {
       addNewMonth();
       addNewValue();
       setX('')
-      setY(0)
+      setY('')
     } else {
-      setXErrorMessage('Please add X axis name')
+      setXErrorMessage('Please add X axis')
     }
   }
 
@@ -106,7 +106,7 @@ const ChartForm = ({
         </span>
         <input
           className="labels__input-y"
-          type="text"
+          type="number"
           value={Y}
           onChange={e => setY(Number(e.target.value))}
         />
@@ -114,6 +114,7 @@ const ChartForm = ({
     </div>
 
     <button
+      style={{padding: 5, marginTop: 10, fontWeight: "bold"}}
       onClick={(e) => add(e)}
     >
       ADD

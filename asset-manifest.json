@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/backendless-test-chart/static/css/main.4edeb25c.css",
-    "main.js": "/backendless-test-chart/static/js/main.bbfcd57b.js",
+    "main.js": "/backendless-test-chart/static/js/main.e0d372b2.js",
     "index.html": "/backendless-test-chart/index.html",
     "main.4edeb25c.css.map": "/backendless-test-chart/static/css/main.4edeb25c.css.map",
-    "main.bbfcd57b.js.map": "/backendless-test-chart/static/js/main.bbfcd57b.js.map"
+    "main.e0d372b2.js.map": "/backendless-test-chart/static/js/main.e0d372b2.js.map"
   },
   "entrypoints": [
     "static/css/main.4edeb25c.css",
-    "static/js/main.bbfcd57b.js"
+    "static/js/main.e0d372b2.js"
   ]
 }

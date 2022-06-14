@@ -12,8 +12,8 @@ const ChartForm = ({
   const [X, setX] = useState('');
   const [Y, setY] = useState('');
 
-  const [month, setMonth] = useState(['January','February','March','April','May'])
-  const [values, setValues] = useState([1,5,10,1,2])
+  const [month, setMonth] = useState(['January','February','March','April','May']);
+  const [values, setValues] = useState([1,5,10,1,2]);
 
   const [XErrorMessage, setXErrorMessage] = useState('');
 
@@ -71,6 +71,17 @@ const ChartForm = ({
     }
   }
 
+  const onYInputChange = (e) => {
+    setY(+(e.target.value))
+  }
+
+  const onXInputChange = (e) => {
+      setX(e.target.value)
+      if (X.length >= 0) {
+        setXErrorMessage(null)
+      }
+  }
+
   return (
     <>
       <h2>Press Enter to add new chart</h2>
@@ -88,13 +99,9 @@ const ChartForm = ({
             <input
               className="labels__input-x"
               type="text"
+              placeholder={month}
               value={X}
-              onChange={e => {
-                setX(e.target.value)
-                if (X.length) {
-                  setXErrorMessage(null)
-                }
-              }}
+              onChange={onXInputChange}
             />
           </label>
           {XErrorMessage && (
@@ -110,14 +117,15 @@ const ChartForm = ({
             <input
               className="labels__input-y"
               type="number"
+              placeholder={values}
               value={Y}
-              onChange={e => setY(Number(e.target.value))}
+              onChange={onYInputChange}
             />
           </label>
         </div>
 
         <button
-          style={{visibility: "hidden"}}
+          className="btn-visibility"
           onClick={(e) => onAdd(e)}
         >
           ADD
